@@ -21,36 +21,32 @@ class TestRandomuser < Minitest::Test
     response = RandomuserRu.generate_female
     assert_equal(response.class, Array)
     assert_equal(response.length, 1)
-    assert_equal(response.first[:user][:gender], 'female')
-    assert_equal(response.first[:user][:name][:title], 'mrs')
-    assert_equal(response.first[:user][:picture], 'http://api.randomuser.ru/0.3.1/portraits/women/0.jpg')
+    assert_equal(response.first[:user][:gender], 'женский')
+    assert_equal(response.first[:user][:picture], "http://api.randomuser.ru/#{RandomuserRu::VERSION}/portraits/women/0.jpg")
   end
 
   def test_generate_female_returns_multiple_responses
     response = RandomuserRu.generate_female(5)
     assert_equal(response.class, Array)
     assert_equal(response.length, 5)
-    assert_equal(response.first[:user][:gender], 'female')
-    assert_equal(response.first[:user][:name][:title], 'mrs')
-    assert_equal(response.first[:user][:picture], 'http://api.randomuser.ru/0.3.1/portraits/women/0.jpg')
+    assert_equal(response.first[:user][:gender], 'женский')
+    assert_equal(response.first[:user][:picture], "http://api.randomuser.ru/#{RandomuserRu::VERSION}/portraits/women/0.jpg")
   end
 
   def test_generate_male_returns_single_response
     response = RandomuserRu.generate_male
     assert_equal(response.class, Array)
     assert_equal(response.length, 1)
-    assert_equal(response.first[:user][:gender], 'male')
-    assert_equal(response.first[:user][:name][:title], 'mr')
-    assert_equal(response.first[:user][:picture], 'http://api.randomuser.ru/0.3.1/portraits/men/0.jpg')
+    assert_equal(response.first[:user][:gender], 'мужской')
+    assert_equal(response.first[:user][:picture], "http://api.randomuser.ru/#{RandomuserRu::VERSION}/portraits/men/0.jpg")
   end
 
   def test_generate_male_returns_multiple_responses
     response = RandomuserRu.generate_male(5)
     assert_equal(response.class, Array)
     assert_equal(response.length, 5)
-    assert_equal(response.first[:user][:gender], 'male')
-    assert_equal(response.first[:user][:name][:title], 'mr')
-    assert_equal(response.first[:user][:picture], 'http://api.randomuser.ru/0.3.1/portraits/men/0.jpg')
+    assert_equal(response.first[:user][:gender], 'мужской')
+    assert_equal(response.first[:user][:picture], "http://api.randomuser.ru/#{RandomuserRu::VERSION}/portraits/men/0.jpg")
   end
 
   def test_generate_seed_returns_single_response

@@ -27,20 +27,20 @@ end
 def mock_response(gender='female')
   {
     user: {
-      gender: "#{gender == 'female' ? 'female' : 'male'}",
+      gender: "#{gender == 'female' ? 'женский' : 'мужской'}",
       name: {
-        title: "#{gender == 'female' ? 'mrs' : 'mr'}",
-        first: "first",
-        last: "last"
+        first: "Алексей",
+        last: "Навальный",
+        middle: "Анатольевич"
       },
       location: {
-        street: "6127 pine dr",
-        city: "raleigh",
-        state: "colorado",
-        zip: "34545"
+        street: "Ленина",
+        city: "Москва",
+        state: "Московская область",
+        zip: "121000"
       },
       email: "first.last@example.com",
-      username: "blueleopard186",
+      username: "navalny",
       password: "password",
       salt: "L",
       md5: "003b0f6e9b1b40200ba0370a5f29208e",
@@ -48,12 +48,12 @@ def mock_response(gender='female')
       sha256: "49995e8aadf97fa0cca079be5bbf47b5fa0c5ffb0dd81831ee9b382c9772b46b",
       registered: "1134630377",
       dob: "326899532",
-      phone: "(164)-244-7352",
-      cell: "(485)-899-1991",
+      phone: "8 495 123 45 67",
+      cell: "7 926 123 45 67",
       SSN: "525-20-3862",
-      picture: "http://api.randomuser.ru/0.3.1/portraits/#{gender == 'female' ? 'women' : 'men'}/0.jpg"
+      picture: "http://api.randomuser.ru/#{RandomuserRu::VERSION}/portraits/#{gender == 'female' ? 'women' : 'men'}/0.jpg"
     },
-    seed: "beautifulLeopard",
-    version: "0.1.0"
+    seed: "navalny",
+    version: RandomuserRu::VERSION
   }
 end
