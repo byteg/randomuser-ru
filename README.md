@@ -1,13 +1,13 @@
 # Randomuser
 
-This gem returns simple JSON/hash responses from the [Random User Generator](http://randomuser.me) API.
+This gem returns simple JSON/hash responses from the [Random User Generator](http://RandomuserRu.me) API.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'randomuser'
+gem 'randomuser-ru'
 ```
 
 And then execute:
@@ -19,7 +19,7 @@ $ bundle
 Or install it as a standalone gem with:
 
 ```bash
-$ gem install randomuser
+$ gem install randomuser-ru
 ```
 
 ## Usage
@@ -27,54 +27,48 @@ $ gem install randomuser
 To request a single random user:
 
 ```ruby
-Randomuser.generate
+RandomuserRu.generate
 ```
 
 To request multiple random users:
 
 ```ruby
-Randomuser.generate(5)
+RandomuserRu.generate(5)
 ```
 
 To request a single female random user:
 
 ```ruby
-Randomuser.generate_female
+RandomuserRu.generate_female
 ```
 
 To request multiple female random users:
 
 ```ruby
-Randomuser.generate_female(5)
+RandomuserRu.generate_female(5)
 ```
 
 To request a single male random user:
 
 ```ruby
-Randomuser.generate_male
+RandomuserRu.generate_male
 ```
 
 To request multiple male random users:
 
 ```ruby
-Randomuser.generate_male(5)
+RandomuserRu.generate_male(5)
 ```
 
-To request a specific user:
-
-```ruby
-Randomuser.generate_seed('foobar')
-```
-
-For more information on this API, please see the [Random User Generator](http://randomuser.me) site.
+For more information on this API, please see the [Random Russian User Generator](http://Randomuser.ru) site.
 
 ## Tests
 
 Testing works as usual:
 
 ```bash
-git clone https://github.com/humanshell/randomuser.git
-cd randomuser
+git clone https://github.com/byteg/randomuser-ru.git
+cd randomuser-ru
 bundle install
 rake
 ```
