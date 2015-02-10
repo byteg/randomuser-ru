@@ -17,10 +17,6 @@ module RandomuserRu
     request("results=#{number}&gender=male")
   end
 
-  def self.generate_seed(seed='')
-    request("seed=#{seed}")
-  end
-
   private
 
   def self.api_url(query='')

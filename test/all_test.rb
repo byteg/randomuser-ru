@@ -22,7 +22,7 @@ class TestRandomuser < Minitest::Test
     assert_equal(response.class, Array)
     assert_equal(response.length, 1)
     assert_equal(response.first[:user][:gender], 'женский')
-    assert_equal(response.first[:user][:picture], "http://api.randomuser.ru/#{RandomuserRu::VERSION}/portraits/women/0.jpg")
+    assert_equal(response.first[:user][:picture][:large], "http://randomuser.ru/images/women/1.jpg")
   end
 
   def test_generate_female_returns_multiple_responses
@@ -30,7 +30,7 @@ class TestRandomuser < Minitest::Test
     assert_equal(response.class, Array)
     assert_equal(response.length, 5)
     assert_equal(response.first[:user][:gender], 'женский')
-    assert_equal(response.first[:user][:picture], "http://api.randomuser.ru/#{RandomuserRu::VERSION}/portraits/women/0.jpg")
+    assert_equal(response.first[:user][:picture][:large], "http://randomuser.ru/images/women/1.jpg")
   end
 
   def test_generate_male_returns_single_response
@@ -38,7 +38,7 @@ class TestRandomuser < Minitest::Test
     assert_equal(response.class, Array)
     assert_equal(response.length, 1)
     assert_equal(response.first[:user][:gender], 'мужской')
-    assert_equal(response.first[:user][:picture], "http://api.randomuser.ru/#{RandomuserRu::VERSION}/portraits/men/0.jpg")
+    assert_equal(response.first[:user][:picture][:large], "http://randomuser.ru/images/men/1.jpg")
   end
 
   def test_generate_male_returns_multiple_responses
@@ -46,13 +46,7 @@ class TestRandomuser < Minitest::Test
     assert_equal(response.class, Array)
     assert_equal(response.length, 5)
     assert_equal(response.first[:user][:gender], 'мужской')
-    assert_equal(response.first[:user][:picture], "http://api.randomuser.ru/#{RandomuserRu::VERSION}/portraits/men/0.jpg")
-  end
-
-  def test_generate_seed_returns_single_response
-    response = RandomuserRu.generate_seed
-    assert_equal(response.class, Array)
-    assert_equal(response.length, 1)
+    assert_equal(response.first[:user][:picture][:large], "http://randomuser.ru/images/men/1.jpg")
   end
 
 end

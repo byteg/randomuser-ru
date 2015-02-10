@@ -19,9 +19,6 @@ module RandomuserRu
     Array.new(number, mock_response('male'))
   end
 
-  def self.generate_seed(seed='')
-    Array.new(1, mock_response)
-  end
 end
 
 def mock_response(gender='female')
@@ -51,7 +48,11 @@ def mock_response(gender='female')
       phone: "8 495 123 45 67",
       cell: "7 926 123 45 67",
       SSN: "525-20-3862",
-      picture: "http://api.randomuser.ru/#{RandomuserRu::VERSION}/portraits/#{gender == 'female' ? 'women' : 'men'}/0.jpg"
+      picture: {
+        large: "http://randomuser.ru/images/#{gender == 'female' ? 'women' : 'men'}/1.jpg",
+        thumb: "http://randomuser.ru/images/#{gender == 'female' ? 'women' : 'men'}/med/1.jpg",
+        medium: "http://randomuser.ru/images/#{gender == 'female' ? 'women' : 'men'}/thubm/1.jpg"
+      }
     },
     seed: "navalny",
     version: RandomuserRu::VERSION
