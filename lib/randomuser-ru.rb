@@ -20,7 +20,7 @@ module RandomuserRu
   private
 
   def self.api_url(query='')
-    "http://api.randomuser.ru/#{RandomuserRu::VERSION}/?#{query}"
+    "http://randomuser.ru/api.json?#{query}"
   end
 
   def self.request(query='')
