@@ -29,8 +29,7 @@ module RandomuserRu
 
     http.start do |connection|
       response = connection.send_request('GET', uri.request_uri)
-      response = JSON.parse(response.body, symbolize_names: true)
-      response[:results]
+      JSON.parse(response.body, symbolize_names: true)
     end
   end
 end
